@@ -6,9 +6,11 @@ int main(int argc, char **argv)
 {
   int numberArray[10];
 
-  cout << "Input up to 10 nonnegative integers (ending with -1): ";
+  cout << "This program accepts up to 10 nonnegative numbers." << endl;
+
   int input;
   for (int i = 0; i < 10; ++i) {
+    cout << "Enter a number (-1 to stop): ";
     cin >> input;
     if (input >= 0) {
       numberArray[i] = input;
