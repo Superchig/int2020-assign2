@@ -15,7 +15,7 @@ int main(int argc, char **argv)
     }
   }
 
-  cout << endl;
+  cout << endl << "Your numbers were:" << endl;
   for (int i = 0; i < 4; ++i) {
     for (int j = 0; j < 5; ++j) {
       cout << a[i][j] << " ";
