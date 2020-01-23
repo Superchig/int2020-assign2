@@ -6,11 +6,11 @@ int main(int argc, char **argv)
 {
   int a[4][5];
 
-  cout << "This program accepts 20 numbers." << endl;
+  cout << "This program accepts 20 numbers in total." << endl;
 
   for (int i = 0; i < 4; ++i) {
+    cout << "Input 5 numbers: ";
     for (int j = 0; j < 5; ++j) {
-      cout << "Input number: ";
       cin >> a[i][j];
     }
   }
