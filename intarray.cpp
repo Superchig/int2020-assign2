@@ -30,4 +30,6 @@ int main(int argc, char **argv)
     cout << numberArray[i] << ' ';
   }
   cout << '\n';
+
+  return 0;
 }
