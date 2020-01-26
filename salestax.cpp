@@ -12,8 +12,10 @@ float addTax(float taxRate, float cost)
 
 int main(int argc, char **argv)
 {
+  const int BASE = 300; // Base cost
+  const int TAX = 9;    // Tax rate
 
-
-  cout << addTax(1, 300) << endl;
+  cout << '$' << BASE << " with a tax rate of " << TAX << '%' << " equals ";
+  cout << '$' << addTax(TAX, BASE) << endl;
   return 0;
 }
