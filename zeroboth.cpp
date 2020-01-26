@@ -20,7 +20,7 @@ int main(int argc, char **argv)
   cout << "Using zeroBoth on i1 and i2." << endl;
   zeroBoth(i1, i2);
 
-  // Both i1 and i2 shoudld be 0
+  // Both i1 and i2 should be 0
   cout << "i1: " << i1 << endl;
   cout << "i2: " << i2 << endl;
 
