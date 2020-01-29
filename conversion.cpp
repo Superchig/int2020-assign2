@@ -5,16 +5,28 @@ using namespace std;
 // Prompts the user for their length in feet and inches
 // Stores the feet part of the length in outFeet and the
 // inches part in outInches
-void getLength(double &outFeet, double &outInches)
+// Returns true if the user chose to exit
+bool getLength(double &outFeet, double &outInches)
 {
+  string input;
   cout << "Please enter a length in feet and inches." << endl;
 
-  cout << "Feet: ";
-  cin >> outFeet;
+  cout << "  Feet (type 'exit' to exit): ";
+  cin >> input;
+  if (input == "exit") {
+    return true;
+  }
+  outFeet = stoi(input);
 
-  cout << "Inches: ";
+  cout << "Inches (type 'exit' to exit): ";
   int inches;
-  cin >> outInches;
+  cin >> input;
+  if (input == "exit") {
+    return true;
+  }
+  outInches = stoi(input);
+
+  return false;
 }
 
 // Converts from feet and inches to meters and centimeters
@@ -39,26 +51,24 @@ void toMetric(double feet, double inches, double &outMet, double &outCm)
 void printMetric(double meters, double centimeters)
 {
   cout << "Length in metric: " << meters << " meter(s) and " << centimeters
-       << " centimeter(s)." << endl;
+       << " centimeter(s)." << endl << endl;
 }
 
 int main(int argc, char **argv)
 {
-  string exit;
-  while (exit != "exit") {
+  while (true) {
     double feet;
     double inches;
-    getLength(feet, inches);
+    bool shouldExit = getLength(feet, inches);
+
+    if (shouldExit) {
+      break;
+    }
 
     double meters;
     double centimeters;
     toMetric(feet, inches, meters, centimeters);
     printMetric(meters, centimeters);
-
-    cout << endl;
-    cout << "Do you want to exit (type 'exit' to exit)? ";
-    cin >> exit;
-    cout << endl;
   }
 
   return 0;
